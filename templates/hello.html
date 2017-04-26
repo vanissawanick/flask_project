@@ -1,0 +1,23 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/stylesheet.css')}}">
+<title>Hello Application in Python</title>
+
+{% if name %}
+   <h1>Hello {{name}}</h1>
+{% else %}
+   <h1>Hello World!</h1>
+{% endif %}
+
+<div id="contact-form">
+	<h1> Get in touch</h1>
+	<form method="post" action="/signup">
+		<label for="name">Name: </label>
+		<input type="text" id="name" name="name" value="" placeholder="Priyanka Singh" required="required" autofocus="autofocus" />
+
+		<label for="email">Email: </label>
+		<input type="email" id="email" name="email" value="" placeholder="Priyanka.Singh@soton.ac.uk" required="required" />
+
+		<input type="submit" value="Submit" id="submit-button" />
+
+	</form>
+</div>
