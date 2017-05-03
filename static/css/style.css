@@ -1,0 +1,41 @@
+/*Created by Vanilsson*/
+
+h1 {
+	color: white;
+	font-size: 80px;
+	text-align: center;
+}
+body {
+	margin: 0 auto;
+	font-family: 'Gloria Hallelujah', cursive;
+	text-align: center;
+	font-size: 14px;
+	background-color: pink;
+	/*position: relative;*/
+}
+h2 {
+	color: white;
+	font-size: 20px;
+}
+strong{
+	color: purple;
+}
+#main {
+	width: 960px;
+	/*height: 100%;*/
+	margin: 0 auto;
+	padding-top: 30px;
+	background-color: #ffbf80;
+}
+footer{
+	font-size: 11px;
+	color: white;
+	background-color: black;
+	height: 60px;
+	padding-top: 30px;
+	/*height: 100%;*/
+	bottom: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="nb">exit</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">class</span> <span class="nc">Scene</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;This scene is not yet configured. Subclass it and implement enter().&quot;</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Engine</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene_map</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scene_map</span> <span class="o">=</span> <span class="n">scene_map</span>
+
+    <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">current_scene</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene_map</span><span class="o">.</span><span class="n">opening_scene</span><span class="p">()</span>
+        <span class="n">last_scene</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene_map</span><span class="o">.</span><span class="n">next_scene</span><span class="p">(</span><span class="s1">&#39;finished&#39;</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="n">current_scene</span> <span class="o">!=</span> <span class="n">last_scene</span><span class="p">:</span>
+            <span class="n">next_scene_name</span> <span class="o">=</span> <span class="n">current_scene</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+            <span class="n">current_scene</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scene_map</span><span class="o">.</span><span class="n">next_scene</span><span class="p">(</span><span class="n">next_scene_name</span><span class="p">)</span>
+
+        <span class="c1"># be sure to print out the last scene</span>
+        <span class="n">current_scene</span><span class="o">.</span><span class="n">enter</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Death</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+
+    <span class="n">quips</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;You died.  You kinda suck at this.&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Your mom would be proud...if she were smarter.&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;Such a luser.&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;I have a small puppy that&#39;s better at this.&quot;</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">Death</span><span class="o">.</span><span class="n">quips</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quips</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">CentralCorridor</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;The Gothons of Planet Percal #25 have invaded your ship and destroyed&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;your entire crew.  You are the last surviving member and your last&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;mission is to get the neutron destruct bomb from the Weapons Armory,&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;put it in the bridge, and blow the ship up after getting into an &quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;escape pod.&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You&#39;re running down the central corridor to the Weapons Armory when&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;a Gothon jumps out, red scaly skin, dark grimy teeth, and evil clown costume&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;flowing around his hate filled body.  He&#39;s blocking the door to the&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Armory and about to pull a weapon to blast you.&quot;</span><span class="p">)</span>
+
+        <span class="n">action</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&gt; &quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;shoot!&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Quick on the draw you yank out your blaster and fire it at the Gothon.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;His clown costume is flowing and moving around his body, which throws&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;off your aim.  Your laser hits his costume but misses him entirely.  This&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;completely ruins his brand new costume his mother bought him, which&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;makes him fly into an insane rage and blast you repeatedly in the face until&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;you are dead.  Then he eats you.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;death&#39;</span>
+
+        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;dodge!&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Like a world class boxer you dodge, weave, slip and slide right&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;as the Gothon&#39;s blaster cranks a laser past your head.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;In the middle of your artful dodge your foot slips and you&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;bang your head on the metal wall and pass out.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You wake up shortly after only to die as the Gothon stomps on&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;your head and eats you.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;death&#39;</span>
+
+        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;tell a joke&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Lucky for you they made you learn Gothon insults in the academy.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You tell the one Gothon joke you know:&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Lbhe zbgure vf fb sng, jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;The Gothon stops, tries not to laugh, then busts out laughing and can&#39;t move.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;While he&#39;s laughing you run up and shoot him square in the head&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;putting him down, then jump through the Weapon Armory door.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;laser_weapon_armory&#39;</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;DOES NOT COMPUTE!&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;central_corridor&#39;</span>
+
+<span class="k">class</span> <span class="nc">LaserWeaponArmory</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You do a dive roll into the Weapon Armory, crouch and scan the room&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;for more Gothons that might be hiding.  It&#39;s dead quiet, too quiet.&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You stand up and run to the far side of the room and find the&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;neutron bomb in its container.  There&#39;s a keypad lock on the box&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;and you need the code to get the bomb out.  If you get the code&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;wrong 10 times then the lock closes forever and you can&#39;t&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;get the bomb.  The code is 3 digits.&quot;</span><span class="p">)</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d%d%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+        <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;[keypad]&gt; &quot;</span><span class="p">)</span>
+        <span class="n">guesses</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="n">guess</span> <span class="o">!=</span> <span class="n">code</span> <span class="ow">and</span> <span class="n">guesses</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;BZZZZEDDD!&quot;</span><span class="p">)</span>
+            <span class="n">guesses</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;[keypad]&gt; &quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">code</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;The container clicks open and the seal breaks, letting gas out.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You grab the neutron bomb and run as fast as you can to the&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;bridge where you must place it in the right spot.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;the_bridge&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;The lock buzzes one last time and then you hear a sickening&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;melting sound as the mechanism is fused together.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You decide to sit there, and finally the Gothons blow up the&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;ship from their ship and you die.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;death&#39;</span>
+
+
+
+<span class="k">class</span> <span class="nc">TheBridge</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You burst onto the Bridge with the netron destruct bomb&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;under your arm and surprise 5 Gothons who are trying to&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;take control of the ship.  Each of them has an even uglier&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;clown costume than the last.  They haven&#39;t pulled their&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;weapons out yet, as they see the active bomb under your&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;arm and don&#39;t want to set it off.&quot;</span><span class="p">)</span>
+
+        <span class="n">action</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&gt; &quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;throw the bomb&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;In a panic you throw the bomb at the group of Gothons&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;and make a leap for the door.  Right as you drop it a&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Gothon shoots you right in the back killing you.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;As you die you see another Gothon frantically try to disarm&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;the bomb. You die knowing they will probably blow up when&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;it goes off.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;death&#39;</span>
+
+        <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;slowly place the bomb&quot;</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You point your blaster at the bomb under your arm&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;and the Gothons put their hands up and start to sweat.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You inch backward to the door, open it, and then carefully&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;place the bomb on the floor, pointing your blaster at it.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You then jump back through the door, punch the close button&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;and blast the lock so the Gothons can&#39;t get out.&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Now that the bomb is placed you run to the escape pod to&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;get off this tin can.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;escape_pod&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;DOES NOT COMPUTE!&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s2">&quot;the_bridge&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">EscapePod</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You rush through the ship desperately trying to make it to&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;the escape pod before the whole ship explodes.  It seems like&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;hardly any Gothons are on the ship, so your run is clear of&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;interference.  You get to the chamber with the escape pods, and&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;now need to pick one to take.  Some of them could be damaged&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;but you don&#39;t have time to look.  There&#39;s 5 pods, which one&quot;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;do you take?&quot;</span><span class="p">)</span>
+
+        <span class="n">good_pod</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;[pod #]&gt; &quot;</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">!=</span> <span class="n">good_pod</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You jump into pod </span><span class="si">%s</span><span class="s2"> and hit the eject button.&quot;</span> <span class="o">%</span> <span class="n">guess</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;The pod escapes out into the void of space, then&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;implodes as the hull ruptures, crushing your body&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;into jam jelly.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s1">&#39;death&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You jump into pod </span><span class="si">%s</span><span class="s2"> and hit the eject button.&quot;</span> <span class="o">%</span> <span class="n">guess</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;The pod easily slides out into space heading to&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;the planet below.  As it flies to the planet, you look&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;back and see your ship implode then explode like a&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;bright star, taking out the Gothon ship at the same&quot;</span><span class="p">)</span>
+            <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;time.  You won!&quot;</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="s1">&#39;finished&#39;</span>
+
+<span class="k">class</span> <span class="nc">Finished</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;You won! Good job.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s1">&#39;finished&#39;</span>
+
+
+<span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="n">scenes</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;central_corridor&#39;</span><span class="p">:</span> <span class="n">CentralCorridor</span><span class="p">(),</span>
+        <span class="s1">&#39;laser_weapon_armory&#39;</span><span class="p">:</span> <span class="n">LaserWeaponArmory</span><span class="p">(),</span>
+        <span class="s1">&#39;the_bridge&#39;</span><span class="p">:</span> <span class="n">TheBridge</span><span class="p">(),</span>
+        <span class="s1">&#39;escape_pod&#39;</span><span class="p">:</span> <span class="n">EscapePod</span><span class="p">(),</span>
+        <span class="s1">&#39;death&#39;</span><span class="p">:</span> <span class="n">Death</span><span class="p">(),</span>
+        <span class="s1">&#39;finished&#39;</span><span class="p">:</span> <span class="n">Finished</span><span class="p">(),</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_scene</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_scene</span> <span class="o">=</span> <span class="n">start_scene</span>
+
+    <span class="k">def</span> <span class="nf">next_scene</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scene_name</span><span class="p">):</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="n">scenes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">scene_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">val</span>
+
+    <span class="k">def</span> <span class="nf">opening_scene</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">next_scene</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_scene</span><span class="p">)</span>
+
+
+<span class="n">a_map</span> <span class="o">=</span> <span class="n">Map</span><span class="p">(</span><span class="s1">&#39;central_corridor&#39;</span><span class="p">)</span>
+<span class="n">a_game</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">(</span><span class="n">a_map</span><span class="p">)</span>
+<span class="n">a_game</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+</pre></div>
+</body>
+</html>

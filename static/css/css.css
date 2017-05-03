@@ -1,0 +1,182 @@
+$blue: #2196F3;
+$transition: 300ms ease;
+
+html {
+  box-sizing: border-box;
+  outline: none;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+
+    &:focus {
+      outline: inherit;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+  font-weight: 200;
+  margin-top: 50px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto 0;
+
+  .query {
+    height: 50px;
+    width: 100%;
+    display: block;
+    padding: 0 25px;
+    border: 1px solid #ccc;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $blue;
+
+      transition: $transition;
+    }
+
+    transition: $transition;
+  }
+
+  .loader {
+    height: 5px;
+    margin: 0;
+    padding: 0;
+    background: white;
+    margin: 0 auto;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $blue;
+      width: 0%;
+      height: 5px;
+
+      transition: $transition;
+    }
+
+    &.done {
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  .clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 30px;
+    opacity: 1;
+
+    &:before {
+      content: '\00d7';
+      color: $blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      line-height: 50px;
+      
+      transition: $transition;
+    }
+    
+    &:hover {
+      &:before {
+        cursor: pointer;
+      }
+    }
+  }
+  
+  &.active {
+    margin-top: -55px;
+    
+    .query {
+      height: 30px;
+      margin-top: 0px;
+
+      transition: $transition;
+    }
+    
+    .clear {
+      height: 30px;
+      
+      &:before {
+        line-height: 30px;
+      }
+    }
+  }
+  
+  &.empty {
+    .clear {
+      opacity: 0;
+    }
+  }
+  
+  transition: $transition;
+}
+
+.result {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5% 25px 0;
+  /* background: #eee; */
+  
+  img, p.no-results {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    opacity: 1;
+    
+    &.hidden {
+      opacity: 0;
+      
+      transition: $transition;
+    }
+    
+    transition: $transition;
+  }
+  
+  p.no-result {
+    font-weight: 200;
+    
+    &.center {
+      text-align: center;
+    }
+  }
+}
+
+.random {
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  height: 50px;
+  display: block;
+  
+  background: $blue;
+  color: white;
+  border: none;
+  
+  opacity: 0;
+  
+  &:hover {
+    background: darken($blue, 10%);
+  }
+  
+  &.active {
+    opacity: 1;
+  }
+  
+  transition: $transition;
+}
