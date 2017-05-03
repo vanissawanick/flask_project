@@ -1,10 +1,11 @@
-from flask import Flask
+from flask import Flask,json
 from flask import render_template
 from flask import request
 import requests
+ 
 
-key = 'key-e9c43f78d63184d83945e8aa10af6435'
-sandbox = 'sandbox6483b8d11fc44c0e9b2ba6b403686bae.mailgun.org'
+key = 'key-a86332885c717e1bc26dc139bc514146'
+sandbox = 'sandboxf03f54d1e3a54f80bff0240c02c57478.mailgun.org'
 
 app=Flask("HelloApp1")
 
@@ -30,10 +31,10 @@ def contact():
 	print(name, message, email)
 
 	#email message
-	subject = "Hello from Priyanka"
+	subject = "Hello from Test"
 	body = "Hi there, this is a test email."
 
-	sender = 'Priyanka.Singh@soton.ac.uk'
+	sender = 'vanissa@gmail.com'
 
 	#sending message
 	request_url = 'https://api.mailgun.net/v2/{0}/messages'.format(sandbox)
@@ -50,7 +51,7 @@ def contact():
 	print('Body: {0}'.format(email_request.text))
 
 
-	return("Form works!")
+	return render_template("contact.html",name=name.title())
 
  
 if __name__=="__main__":
