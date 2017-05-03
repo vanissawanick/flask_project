@@ -4,8 +4,8 @@ from flask import request
 import requests
  
 
-key = 'key-a86332885c717e1bc26dc139bc514146'
-sandbox = 'sandboxf03f54d1e3a54f80bff0240c02c57478.mailgun.org'
+key = 'xxxxx' #had to change it
+sandbox = 'xxxxx'
 
 app=Flask("HelloApp1")
 
