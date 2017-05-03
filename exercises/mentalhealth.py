@@ -2,11 +2,11 @@
 
 import tweepy
 
-CONSUMER_KEY = "QluZ6AQ1FYlInBvrASVCfPp85" #"The key that you got tomorrow from your twitter account"
-CONSUMER_SECRET = "cjrb8YUMWskE5ZneL8NNqpTs9JUvCy1S1GdV1DmWKvg8x1OybL"  # "The consumer secret"
+CONSUMER_KEY = "xxxx" #"The key that you got tomorrow from your twitter account"
+CONSUMER_SECRET = "xxxx"  # "The consumer secret"
 
-ACCESS_KEY = "18245240-umk7Miiy5EXaXtpuC1lZ4MazS1fmnzpojc77DvNGG"   #"Access key that we created from our respective accounts in the end"
-ACCESS_SECRET = "LVenbhZzjuH5o8zNC90Dg5Wp7C85tYnXs0jkEhJ7Gj3mU"   #"Access secret"
+ACCESS_KEY = "xxxx"   #"Access key that we created from our respective accounts in the end"
+ACCESS_SECRET = "xxxx"   #"Access secret"
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
