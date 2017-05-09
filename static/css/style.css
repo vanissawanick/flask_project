@@ -11,6 +11,7 @@ body {
 	text-align: center;
 	font-size: 14px;
 	background-color: pink;
+	text-decoration: none;
 	/*position: relative;*/
 }
 h2 {
@@ -38,4 +39,9 @@ footer{
 	position: absolute;
 	left: 0;
 	right: 0;
+}
+#list {
+	background-color: black;
+	display: inline-block;
+	text-decoration: none;
 }

@@ -1,14 +1,42 @@
-<html>
-    <head>
-        <title>Gothons Of Planet Percal #25</title>
-    </head>
-<body>
-
-{% if greeting %}
-    I just wanted to say <em style="color: green; font-size: 2em;">{{greeting}}</em>.
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+<title>Hello Application in Python</title>
+<div style="display:inline-block; text-decoration: none">
+		<a style="display:inline-block; text-decoration: none; background-color: black; color: white; padding: 10px" href="/">Home</a>
+		<a style="display:inline-block; text-decoration: none; background-color: black; color: white; padding: 10px" href="/about">About</a>
+		<a style="display:inline-block; text-decoration: none; background-color: black; color: white; padding: 10px" href="/contact">Contact</a>
+</div>
+{% if name %}
+   <h1>Hello {{name}}</h1>
 {% else %}
-    <em>Hello</em>, world!
+   <h1>Welcome to this page!</h1>
 {% endif %}
+I've tried but this is too hard! I wanted to use GIPHY Api and do some nice search, but it didn't work. So this app does just a random page in Flask. :(
 
-</body>
-</html>
+<!--<h1> Contact me </h1>
+
+
+<!-<form method="post" action="/contact">
+
+	<label for="name">Name: </label>
+	<input type="text" id="name" name="name" value="" placeholder="Enter your name" required="required" autofocus="autofocus" />
+	</br>
+
+	<label for="message">Message: </label>
+	<input type="text" id="message" name="message" value="" placeholder="Enter your message" required="required" />
+
+	</br>
+
+	<label for="email">Email: </label>
+	<input type="Email" name="Email" id="Email" value="" placeholder="Enter email address" required="required" />
+
+	</br>
+
+	<input type="submit" value="Submit" id="submit" />
+
+
+</form>
+<!-
+<form method="get" action="/{{name}}">
+<label for="q">search: </label> <input type="q" name="q" id="q" value="" placeholder="search" required="required" />
+</form>

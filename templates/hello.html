@@ -4,6 +4,12 @@
 <script src="static/js/giphys.js" type="text/javascript"></script>
 <title>Hello Application in Python</title>
 </head>
+<ul>
+	<li>Home</li>
+	<li>About</li>
+	<li>What does this app do?</li>
+	<li>Contact</li>
+</ul>
 {% if name %}
    <h1>Hello {{name}}</h1>
 {% else %}
@@ -12,9 +18,7 @@
 I've tried but this is too hard!
 
 <h1> Contact me </h1>
-<div>
-<span id = "giphyweb"></span>
-</div>
+
 
 <form method="post" action="/contact">
 
@@ -34,7 +38,9 @@ I've tried but this is too hard!
 
 	<input type="submit" value="Submit" id="submit" />
 
-	
 
-
+</form>
+<!--
+<form method="get" action="/{{name}}">
+<label for="q">search: </label> <input type="q" name="q" id="q" value="" placeholder="search" required="required" />
 </form>

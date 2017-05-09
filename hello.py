@@ -4,22 +4,40 @@ from flask import request
 import requests
  
 
-key = 'xxxxx' #had to change it
-sandbox = 'xxxxx'
+key = 'key-a86332885c717e1bc26dc139bc514146'
+sandbox = 'sandboxf03f54d1e3a54f80bff0240c02c57478.mailgun.org'
 
 app=Flask("HelloApp1")
+
 
 @app.route("/")
 def hello():
 #    return "Hello Everyone!"
-    return render_template("hello.html")
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+#    return "Hello Everyone!"
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact_page():
+#    return "Hello Everyone!"
+	return render_template("contact.html")
 
 @app.route("/<name>")
 def hello_name(name):
 #    return "Hello {0}!".format(name.title())
-    return render_template("hello.html",name=name.title())
+    return render_template("template.html",name=name.title())
 
-@app.route("/contact", methods=['POST'])
+@app.route("/q", methods=['GET', 'POST']) 
+def search_result(name):
+#    tried to do a search, but it didn't work
+    return render_template("template.html",name=name.title())
+
+
+
+@app.route("/message", methods=['POST'])
 def contact():
 	form_data= request.form
 
@@ -51,7 +69,7 @@ def contact():
 	print('Body: {0}'.format(email_request.text))
 
 
-	return render_template("contact.html",name=name.title())
+	return render_template("message.html",name=name.title())
 
  
 if __name__=="__main__":
