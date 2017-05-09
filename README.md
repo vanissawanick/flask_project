@@ -1,2 +1,2 @@
-# flask_project
-Repository for flask project 2017
+# Flask Project for CodeFirst Girls Python
+Repository of studies, exercises and a small application
